@@ -95,6 +95,8 @@ commands:
           name: Check installed successfully
           command: |
             mount.efs --version
+      - store_artifacts:
+          path: build
   build-rpm:
     steps:
       - checkout
@@ -136,6 +138,8 @@ commands:
           name: Check changelog
           command: |
             rpm -q --changelog amazon-efs-utils
+      - store_artifacts:
+          path: build
   build-rpm-rustup:
     steps:
       - run:
@@ -182,6 +186,8 @@ commands:
           name: Check changelog
           command: |
             rpm -q --changelog amazon-efs-utils
+      - store_artifacts:
+          path: build
 
   build-suse-rpm:
     steps:
@@ -240,6 +246,8 @@ commands:
           name: Check changelog
           command: |
             rpm -q --changelog amazon-efs-utils
+      - store_artifacts:
+          path: build
   build-centos-repo:
     steps:
     - run:
